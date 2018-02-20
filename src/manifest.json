@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
 
-  "name": "Remove DOM elements easily",
-  "description": "Remove for the win!",
+  "name": "Better DOM",
+  "description": "Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.",
   "version": "1.0",
 
   "browser_action": {
@@ -17,6 +17,10 @@
       "js": ["js/content.js"]
     }
   ],
+  "icons": {
+    "48": "img/icon_48.png",
+    "128": "img/icon_128.png"
+  },
   "permissions": [
     "activeTab",
     "storage"
