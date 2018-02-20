@@ -21,6 +21,10 @@ function activate() {
 }
 
 function deactivate() {
+  if (activeEl) {
+    activeEl.style.outline = 'none';
+    activeEl = null;
+  }
   document.removeEventListener('mousemove', onMouseMove);
   document.removeEventListener('mousedown', onMouseDown);
 }
@@ -32,3 +36,13 @@ chrome.runtime.onMessage.addListener(data => {
 });
 
 
+function init() {
+  document.addEventListener('keyup', e => {
+    if (e.keyCode === 27) { // Esc
+      chrome.runtime.sendMessage({type: 'TOGGLE_ENABLED'});
+    }
+
+  })
+}
+
+init();
