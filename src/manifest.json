@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+
+  "name": "Remove DOM elements easily",
+  "description": "Remove for the win!",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "img/inactive.png"
+  },
+  "background": {
+    "scripts": ["js/bg.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/content.js"]
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "storage"
+  ]
+}
